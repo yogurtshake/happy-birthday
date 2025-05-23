@@ -4,7 +4,9 @@
 -set up certbot for subdomain
 -configure postfix to send from subdomain
 -create email script
+-make it executable
 -create cron job
 -add captcha?
 -set IP to display as subdomain?
 -add link to main site
+-overwrite if multiple entries for one email address
