@@ -1,8 +1,7 @@
--configure postfix to send from subdomain
 -make email script executable
--create cron job
+-create cron job for email script
+
 -add captcha?
--add link to main site
 -make cron job for backing up data
 -make cron job to keep site awake
 
