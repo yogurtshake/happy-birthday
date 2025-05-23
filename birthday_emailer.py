@@ -14,7 +14,7 @@ with sqlite3.connect(DB_PATH) as conn:
                 f"Dear {name},\n\n"
                 "Happy Birthday. Hope you have a good one."
                 "\n\nSincerely,\nLucas' Birthday Emailer"
-                "\nbirthday.lucaskim.ca"
+                "\nbirthday.lucas.su-keun.kim"
             )
             subprocess.run(
                 ['mail', '-s', subject, '-a', 'Reply-To: lucassukeunkim@gmail.com', '-c', 'lucassukeunkim@gmail.com', email],
