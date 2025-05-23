@@ -1,0 +1,10 @@
+-create subdomain
+-create flask web app
+-configure nginx for subdomain
+-set up certbot for subdomain
+-configure postfix to send from subdomain
+-create email script
+-create cron job
+-add captcha?
+-set IP to display as subdomain?
+-add link to main site
