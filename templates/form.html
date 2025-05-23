@@ -3,11 +3,23 @@
 <head style="text-align: center;"><title>happy birthday notification</title></head>
 <body style="text-align: center;">
   <h1>Get a happy birthday email on your birthday!</h1>
-  <p>This way, if I forget to wish you a happy birthday, I still technically did.</p>
+  <p>This way, if I forget to wish you a happy birthday, I technically still did.</p>
+  <p>If you found your way here from the happy birthday email, that means someone else signed up for you (likely me).</p>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul style="color: green;">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  
   <form method="POST">
+    First name: <input type="text" name="name" required><br>
     Email address: <input type="email" name="email" required><br>
     Date of Birth: <input type="date" name="dob" required><br>
-    <br></br>
+    <br>
     <button type="submit">SUBMIT</button>
   </form>
 </body>
