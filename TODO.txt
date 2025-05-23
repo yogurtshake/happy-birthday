@@ -1,12 +1,9 @@
--create subdomain
--create flask web app
--configure nginx for subdomain
--set up certbot for subdomain
 -configure postfix to send from subdomain
--create email script
--make it executable
+-make email script executable
 -create cron job
 -add captcha?
--set IP to display as subdomain?
 -add link to main site
--overwrite if multiple entries for one email address
+-make cron job for backing up data
+-make cron job to keep site awake
+
+-set up DKIM using opendkim
