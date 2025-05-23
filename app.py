@@ -26,7 +26,7 @@ def index():
             existing = cursor.fetchone()
 
             if existing:
-                conn.execute("UPDATE birthdays SET name = ?, SET dob = ? WHERE email = ?", (name, dob, email))
+                conn.execute("UPDATE birthdays SET name = ?, dob = ? WHERE email = ?", (name, dob, email))
                 flash("Birthday updated successfully")
             else:
                 conn.execute("INSERT INTO birthdays (email, name, dob) VALUES (?, ?, ?)", (email, name, dob))
