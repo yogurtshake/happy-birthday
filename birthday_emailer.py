@@ -18,7 +18,7 @@ REPLY_TO = 'lucassukeunkim@gmail.com'
 def send_birthday_email(name, to_email):
     msg = EmailMessage()
     msg['Subject'] = "Happy Birthday!"
-    msg['From'] = f"Lucas' Birthday Emailer <{SENDER_EMAIL}>"
+    msg['From'] = f"Lucas Kim <{SENDER_EMAIL}>"
     msg['To'] = to_email
     msg['Reply-To'] = REPLY_TO
     msg.set_content(f"""Dear {name},
@@ -26,8 +26,11 @@ def send_birthday_email(name, to_email):
 Happy Birthday! Hope you have a good one.
 
 Sincerely,
-Lucas' Birthday Emailer
 
+Lucas
+
+
+**This is an automated message sent from my server.**
 https://birthday.lucas.su-keun.kim
 """)
 
