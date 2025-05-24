@@ -26,11 +26,11 @@ def send_birthday_email(name, to_email):
 Happy Birthday! Hope you have a good one.
 
 Sincerely,
-
 Lucas
 
 
 **This is an automated message sent from my server.**
+
 https://birthday.lucas.su-keun.kim
 """)
 
