@@ -1,5 +1,7 @@
 # happy-birthday
 
+birthday.lucas.su-keun.kim
+
 ## dependencies: 
 
 nginx
