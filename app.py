@@ -27,7 +27,7 @@ def index():
 
             if existing:
                 conn.execute("UPDATE birthdays SET name = ?, dob = ? WHERE email = ?", (name, dob, email))
-                flash("Birthday updated successfully")
+                flash("Birthday and/or name updated successfully")
             else:
                 conn.execute("INSERT INTO birthdays (email, name, dob) VALUES (?, ?, ?)", (email, name, dob))
                 flash("Sign up successful")
