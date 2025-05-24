@@ -1,6 +1,6 @@
 # happy-birthday
 
-[webpage](birthday.lucas.su-keun.kim)
+[webpage](https://birthday.lucas.su-keun.kim)
 
 ## dependencies: 
 
