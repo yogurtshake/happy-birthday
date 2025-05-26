@@ -2,14 +2,16 @@ import sqlite3
 from datetime import datetime
 import smtplib
 from email.message import EmailMessage
+from dotenv import load_dotenv
+import os
 
 
 DB_PATH = '/home/lskyogurtshake/happy-birthday/birthdays.db'
 
-SMTP_SERVER = 'mail.smtp2go.com'
-SMTP_PORT = 2525
-SMTP_USER = 'yogurtshake'
-SMTP_PASS = 'vC2xPhmX3JKbMyNi'
+SMTP_SERVER = os.getenv("SMTP_SERVER")
+SMTP_PORT = int(os.getenv("SMTP_PORT", 2525))
+SMTP_USER = os.getenv("SMTP_USER")
+SMTP_PASS = os.getenv("SMTP_PASS")
 
 SENDER_EMAIL = 'lucas@su-keun.kim'
 REPLY_TO = 'lucassukeunkim@gmail.com'
