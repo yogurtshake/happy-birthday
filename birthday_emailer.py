@@ -4,7 +4,7 @@ import smtplib
 from email.message import EmailMessage
 
 
-DB_PATH = 'birthdays.db'
+DB_PATH = '/home/lskyogurtshake/happy-birthday/birthdays.db'
 
 SMTP_SERVER = 'mail.smtp2go.com'
 SMTP_PORT = 2525
