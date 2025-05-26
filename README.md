@@ -8,9 +8,9 @@ I have set up my VPS (a GCP Compute Engine VM) to send out automated Happy Birth
 
 The webpage is accessible through the domain birthday.lucas.su-keun.kim (a sub-sub-domain of su-keun.kim), which points to my server's internet-facing static IP. 
 
-I have Nginx on this server acting as a reverse proxy for a couple of domains - for traffic coming from birthday.lucas.su-keun.kim, it directs to the webpage which is an extremely simple python (Flask) webapp, "app.py", that accepts input for a form consisting of a field for Name, Email, and Date of Birth. The HTML can be found in the templates folder in the file "form.html".
+I have Nginx on this server acting as a reverse proxy for a couple of domains - for traffic coming from birthday.lucas.su-keun.kim, it directs to the webpage which is an extremely simple python (Flask) webapp, "app.py" running on a port on localhost. The page accepts input for a form consisting of a field for Name, Email, and Date of Birth. The HTML can be found in the templates folder in the file "form.html".
 
-I have SQLite handle the entries and save them in my simple database (which is not kept on this repo) which consists of a table, "birthdays", where the email address is the primary key. This ensures that duplicate entries are not allowed and that an entry can be updated by entering the same email address and different Name and/or DoB.
+I have SQLite handle the form entries and save them in my simple database (which is not kept on this repo) which consists of a table, "birthdays", where the email address is the primary key. This ensures that duplicate entries are not allowed and that an entry can be updated by entering the same email address and different Name and/or DoB.
 
 I have a script, "birthday_emailer.py", that finds which birthdays in the database are equal to today's date (only comparing month and day, of course) and sends a happy birthday email to the corresponding email address(es). How does it send the emails? Not by self-hosted email, that's for sure. To ensure deliverability and IP reputation, I use the free tier of the service SMTP2GO and send via their SMTP server using the python library "smtplib". The free tier of SMTP2GO allows for 1000 emails sent per month (more than enough for this tiny project). 
 
