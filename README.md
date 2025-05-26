@@ -33,7 +33,7 @@ python3
 python: flask, gunicorn, python-dotenv
 
 
-## stuff
+## stuff for me
 
 **command to restart web app (it has been set up as a systemd service):**
 
