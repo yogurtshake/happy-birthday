@@ -5,6 +5,7 @@ from email.message import EmailMessage
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
 
 DB_PATH = '/home/lskyogurtshake/happy-birthday/birthdays.db'
 
