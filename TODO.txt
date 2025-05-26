@@ -1,5 +1,3 @@
 -add captcha?
 -make cron job for backing up data
 -change HTML/CSS styling, fonts, etc
-
--make sure cron job works (see if email was sent to LSK on 2025-05-25 at midnight
