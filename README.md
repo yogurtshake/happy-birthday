@@ -27,8 +27,9 @@ certbot,
 ~~mailutils~~
 ~~postfix~~
 ~~opendkim~~
-SMTP2GO,
 python3
+
+SMTP2GO
 
 python: flask, gunicorn, python-dotenv
 
