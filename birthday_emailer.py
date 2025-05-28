@@ -32,7 +32,8 @@ Sincerely,
 Lucas
 
 
-**This is an automated message sent from my server.**
+**This is an automated message sent from my server. 
+If you want to unsubscribe, reply and let me know.**
 
 https://birthday.lucas.su-keun.kim
 """)
