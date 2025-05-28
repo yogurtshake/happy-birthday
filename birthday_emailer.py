@@ -13,9 +13,8 @@ SMTP_SERVER = os.getenv("SMTP_SERVER")
 SMTP_PORT = int(os.getenv("SMTP_PORT", 2525))
 SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASS = os.getenv("SMTP_PASS")
-
-SENDER_EMAIL = 'lucas@su-keun.kim'
-REPLY_TO = 'lucassukeunkim@gmail.com'
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+REPLY_TO = os.getenv("REPLY_TO")
 
 
 def send_birthday_email(name, to_email):
@@ -38,7 +37,7 @@ If you want to unsubscribe, reply and let me know.**
 https://birthday.lucas.su-keun.kim
 """)
 
-    bcc_address = 'lucassukeunkim@gmail.com'
+    bcc_address = REPLY_TO
     recipients = [to_email, bcc_address]
 
     try:
@@ -50,7 +49,6 @@ https://birthday.lucas.su-keun.kim
     except Exception as e:
         print(f"Failed to send email to {to_email}: {e}")
 
-
 def main():
     today = datetime.today().strftime('%m-%d')
     with sqlite3.connect(DB_PATH) as conn:
@@ -58,7 +56,6 @@ def main():
         for name, email, dob in cursor.fetchall():
             if dob[5:] == today:
                 send_birthday_email(name, email)
-
 
 if __name__ == "__main__":
     main()
