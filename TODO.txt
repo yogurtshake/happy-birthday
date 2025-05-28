@@ -1,3 +1,2 @@
 -add captcha?
 -regularly back up data?
--change styling, fonts, etc
