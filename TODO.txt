@@ -1,2 +1,4 @@
 -add captcha?
 -regularly back up data?
+-make DB_PATH in app.py an env variable
+-update reply-to address env variable
