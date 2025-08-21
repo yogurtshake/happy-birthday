@@ -14,7 +14,7 @@ I have SQLite handle the form entries and save them in my simple database (which
 
 I have a script, "birthday_emailer.py", that finds which birthdays in the database are equal to today's date (only comparing month and day, of course) and sends a happy birthday email to the corresponding email address(es). How does it send the emails? Not by self-hosted email, that's for sure. I use the free tier of the service SMTP2GO and send via their SMTP server using the python library "smtplib". The free tier of SMTP2GO allows for 1000 emails sent per month (more than enough for this tiny project). 
 
-The contents of the happy birthday email can be found in "birthday_emailer.py" where the only variable in the body that changes is the person's name. I set the "from" address as lucas@su-keun.kim (which does not actually exist) and the "reply-to address" as my own Gmail address. SPF and DKIM are set up for my domain, su-keun.kim, to accommodate SMTP2GO's server. 
+The contents of the happy birthday email can be found in "birthday_emailer.py" where the only variable in the body that changes is the person's name. I set the "from" address as my email address, lucas@su-keun.kim. SPF and DKIM are set up for my domain, su-keun.kim, to accommodate SMTP2GO's server. 
 
 Finally, I set up a cron job to run "birthday_emailer.py" every single day at 09:00 on the timezone America/Toronto.
 
