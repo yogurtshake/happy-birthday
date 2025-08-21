@@ -1,4 +1,2 @@
 -add captcha?
 -regularly back up data?
--make DB_PATH an env variable
--update reply-to address env variable
