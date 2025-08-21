@@ -1,6 +1,10 @@
 import sqlite3
+from dotenv import load_dotenv
+import os
 
-DB_PATH = 'birthdays.db'
+load_dotenv()
+
+DB_PATH = os.getenv("DB_PATH")
 
 def print_birthdays():
     with sqlite3.connect(DB_PATH) as conn:
