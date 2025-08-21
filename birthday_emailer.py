@@ -7,15 +7,13 @@ import os
 
 load_dotenv()
 
-DB_PATH = '/home/lskyogurtshake/happy-birthday/birthdays.db'
-
 SMTP_SERVER = os.getenv("SMTP_SERVER")
 SMTP_PORT = int(os.getenv("SMTP_PORT", 2525))
 SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASS = os.getenv("SMTP_PASS")
 SENDER_EMAIL = os.getenv("SENDER_EMAIL")
 REPLY_TO = os.getenv("REPLY_TO")
-
+DB_PATH = os.getenv("DB_PATH")
 
 def send_birthday_email(name, to_email):
     msg = EmailMessage()

@@ -14,10 +14,10 @@ SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASS = os.getenv("SMTP_PASS")
 SENDER_EMAIL = os.getenv("SENDER_EMAIL")
 REPLY_TO = os.getenv("REPLY_TO")
+DB_PATH = os.getenv("DB_PATH")
 
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY')
-DB_PATH = '/home/lskyogurtshake/happy-birthday/birthdays.db'
 
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
