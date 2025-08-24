@@ -8,7 +8,7 @@ I have set up my VPS (a GCP Compute Engine VM) to send out automated Happy Birth
 
 The webpage is accessible through the domain birthday.lucas.su-keun.kim (a sub-sub-domain of su-keun.kim), which points to my server's internet-facing static IP. 
 
-I have Nginx on this server acting as a reverse proxy for a couple of domains - for traffic coming from birthday.lucas.su-keun.kim, it directs to the webpage which is an extremely simple python (Flask) webapp, "app.py" running on a port on localhost. The page accepts input for a form consisting of a field for Name, Email, and Date of Birth. The HTML can be found in the templates folder in the file "form.html".
+I have Nginx on this server acting as a reverse proxy for a couple of domains - for traffic coming from birthday.lucas.su-keun.kim, it directs to the webpage which is an extremely simple python (Flask) webapp, "app.py". The page accepts input for a form consisting of a field for Name, Email, and Date of Birth. The HTML can be found in the templates folder in the file "form.html".
 
 I have SQLite handle the form entries and save them in my simple database (which is not kept on this repo) which consists of a table, "birthdays", where the email address is the primary key. This ensures that duplicate entries are not allowed and that an entry can be updated by entering the same email address and different Name and/or DoB.
 
@@ -31,18 +31,3 @@ nginx,
 SMTP2GO
 
 python: flask, gunicorn, python-dotenv
-
-
-## stuff for me
-
-**command to restart web app (it has been set up as a systemd service):**
-
--> sudo systemctl restart birthday.service
-
-check status:
-
--> sudo systemctl status birthday.service
-
-command to manually start web app on localhost port 5001:
-
--> gunicorn -w 2 -b 127.0.0.1:5001 app:app
