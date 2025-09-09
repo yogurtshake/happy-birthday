@@ -1,6 +1,6 @@
 # happy-birthday
 
-[webpage](https://birthday.lucas.su-keun.kim)
+[webpage](https://lucas.su-keun.kim/happy-birthday)
 
 ## What's Happening Here?
 
