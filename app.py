@@ -16,7 +16,7 @@ SENDER_EMAIL = os.getenv("SENDER_EMAIL")
 REPLY_TO = os.getenv("REPLY_TO")
 DB_PATH = os.getenv("DB_PATH")
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/happy-birthday/static')
 
 app.secret_key = os.getenv('FLASK_SECRET_KEY')
 
