@@ -22,12 +22,10 @@ Finally, I set up a cron job to run "birthday_emailer.py" every single day at 09
 
 ## dependencies: 
 
-python3,
-nginx,
-~~mailutils~~
-~~postfix~~
-~~opendkim~~
+### app functionality
 
-SMTP2GO
+python3, flask, SMTP2GO
 
-python: flask, gunicorn, python-dotenv
+### hosting functionality
+
+nginx (for reverse proxy), gunicorn (HTTP server) 
