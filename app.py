@@ -5,6 +5,8 @@ import smtplib
 from email.message import EmailMessage
 from dotenv import load_dotenv
 import os
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from werkzeug.serving import run_simple
 
 load_dotenv()
 
@@ -16,12 +18,12 @@ SENDER_EMAIL = os.getenv("SENDER_EMAIL")
 REPLY_TO = os.getenv("REPLY_TO")
 DB_PATH = os.getenv("DB_PATH")
 
-app = Flask(
-    __name__,
-    static_url_path='/happy-birthday/static',
-    static_folder='static'
-)
-app.secret_key = os.getenv('FLASK_SECRET_KEY')
+real_app = Flask(__name__)
+
+app = DispatcherMiddleware(Flask('dummy'), {
+    '/happy-birthday': real_app
+})
+real_app.secret_key = os.getenv('FLASK_SECRET_KEY')
 
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
