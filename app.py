@@ -5,8 +5,6 @@ import smtplib
 from email.message import EmailMessage
 from dotenv import load_dotenv
 import os
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.serving import run_simple
 
 load_dotenv()
 
@@ -18,12 +16,9 @@ SENDER_EMAIL = os.getenv("SENDER_EMAIL")
 REPLY_TO = os.getenv("REPLY_TO")
 DB_PATH = os.getenv("DB_PATH")
 
-real_app = Flask(__name__)
+app = Flask(__name__)
 
-app = DispatcherMiddleware(Flask('dummy'), {
-    '/happy-birthday': real_app
-})
-real_app.secret_key = os.getenv('FLASK_SECRET_KEY')
+app.secret_key = os.getenv('FLASK_SECRET_KEY')
 
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
@@ -33,7 +28,7 @@ def init_db():
             dob TEXT NOT NULL
         )''')
 
-@real_app.route('/', methods=['GET', 'POST'])
+@app.route('/happy-birthday/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         name = request.form['name']
@@ -70,10 +65,10 @@ def index():
             except Exception as e:
                 print(f"Failed to send notification: {e}")
         
-        return redirect(request.script_root + url_for('index'))
+        return redirect(url_for('index'))
     
     return render_template('form.html')
 
 if __name__ == '__main__':
     init_db()
-    run_simple('127.0.0.1', 5001, app, use_reloader=True, use_debugger=True)
+    app.run('127.0.0.1', 5001, debug=True)
