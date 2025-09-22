@@ -28,7 +28,7 @@ def init_db():
             dob TEXT NOT NULL
         )''')
 
-@app.route('/happy-birthday/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         name = request.form['name']
