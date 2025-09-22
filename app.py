@@ -76,4 +76,4 @@ def index():
 
 if __name__ == '__main__':
     init_db()
-    app.run(host='127.0.0.1', port=5001)
+    run_simple('127.0.0.1', 5001, app, use_reloader=True, use_debugger=True)
