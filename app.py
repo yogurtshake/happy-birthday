@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, url_for
 import sqlite3
 from datetime import datetime
 import smtplib
@@ -70,7 +70,7 @@ def index():
             except Exception as e:
                 print(f"Failed to send notification: {e}")
         
-        return redirect('/')
+        return redirect(request.script_root + url_for('index'))
     
     return render_template('form.html')
 
